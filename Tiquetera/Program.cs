@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Tiquetera.Datos;
 
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AplicationBaseDatos>(opciones => 
     opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSQLServer"))
 );
+
+// Agregar el servicio Identity a la aplicacion
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
