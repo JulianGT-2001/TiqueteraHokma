@@ -2,7 +2,7 @@
 
 namespace Tiquetera.Controllers
 {
-    public class Users : Controller
+    public class UsersController : Controller
     {
         public IActionResult Login()
         {

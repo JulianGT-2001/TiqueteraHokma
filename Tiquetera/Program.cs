@@ -1,4 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Tiquetera.Datos;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Configuramos la conexion a SQLServer
+builder.Services.AddDbContext<AplicationBaseDatos>(opciones => 
+    opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSQLServer"))
+);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

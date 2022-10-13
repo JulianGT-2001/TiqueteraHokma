@@ -2,7 +2,7 @@
 
 namespace Tiquetera.Controllers
 {
-    public class Sucursales : Controller
+    public class SucursalesController : Controller
     {
         public IActionResult ListarSucursales()
         {
