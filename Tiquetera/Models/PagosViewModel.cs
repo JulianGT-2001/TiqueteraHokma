@@ -1,10 +1,10 @@
 ﻿namespace Tiquetera.Models
 {
     public class PagosViewModel
-    {
-        public int idTipoTransaccion { get; set; }
+    { 
         public int idPagos { get; set; }
-        public int padreId { get; set; }
+        public int idUsuarioEstablecimiento_U { get; set; }
+        public bool estado { get; set; }
         public DateTime fechaCreacion { get; set; }
         public DateTime fechaModificacion { get; set; }
         public DateTime fechaMaquinaModifica { get; set; }

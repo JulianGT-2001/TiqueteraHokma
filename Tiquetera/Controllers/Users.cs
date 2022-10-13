@@ -8,5 +8,13 @@ namespace Tiquetera.Controllers
         {
             return View();
         }
+        public IActionResult RegisterUser()
+        {
+            return View();
+        }
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
     }
 }

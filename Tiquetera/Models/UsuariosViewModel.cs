@@ -12,6 +12,7 @@
         public string segundoApellido { get; set; }
         public string numeroDocumento { get; set; }
         public DateTime fechaNacimiento { get; set; }
+        public bool vigente { get; set; }
         public DateTime fechaCreacion { get; set; }
         public DateTime fechaMaquinaModifica { get; set; }
         public string maquinaModifica { get; set; }
