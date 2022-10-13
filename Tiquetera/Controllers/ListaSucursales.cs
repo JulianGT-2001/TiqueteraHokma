@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Tiquetera.Controllers
 {
-    public class ListaUsuarios : Controller
+    public class ListaSucursales : Controller
     {
         // GET: ListaUsuarios
         public ActionResult Index()
