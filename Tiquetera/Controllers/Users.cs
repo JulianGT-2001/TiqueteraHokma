@@ -15,6 +15,7 @@ namespace Tiquetera.Controllers
         public IActionResult ForgotPassword()
         {
             return View();
+
         }
     }
 }
