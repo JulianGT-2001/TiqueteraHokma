@@ -27,7 +27,16 @@ namespace Tiquetera.Controllers
         [HttpPost]
         public IActionResult RegisterUser(UsuariosViewModel register)
         {
-            return View();
+            if (register.tipoId != "1"|| register.tipoId  != "2")
+            {
+                return RedirectToAction("Error");
+            }
+            else
+            {
+                return View();
+            }
+            
+            
         }
         public IActionResult ForgotPassword()
         {

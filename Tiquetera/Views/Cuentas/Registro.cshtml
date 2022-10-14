@@ -1,0 +1,94 @@
+﻿@model RegistroViewModel
+
+@{
+    ViewData["Title"] = "Registro Usuario";
+    Layout = null;
+}
+
+<h1>Registro Usuarios</h1>
+
+
+<form asp-controller="UsersController" asp-action="Registro" method="post" role="form">
+    <!--muestra el mensaje de error que se genera cuando un campo es requerido-->
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="Correo" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Correo" class="from-control" />
+            <span asp-validation-for="Correo" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="contrasena" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="contrasena" class="from-control" />
+            <span asp-validation-for="contrasena" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConfirmarContrasena" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="ConfirmarContrasena" class="from-control" />
+            <span asp-validation-for="ConfirmarContrasena" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="primerNombre" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="primerNombre" class="from-control" />
+            <span asp-validation-for="primerNombre" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="segundoNombre" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="segundoNombre" class="from-control" />
+            <span asp-validation-for="segundoNombre" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="primerApellido" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="primerApellido" class="from-control" />
+            <span asp-validation-for="primerApellido" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="segundoApellido" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="segundoApellido" class="from-control" />
+            <span asp-validation-for="segundoApellido" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="numeroDocumento" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="numeroDocumento" class="from-control" />
+            <span asp-validation-for="numeroDocumento" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="numeroTelefono" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="numeroTelefono" class="from-control" />
+            <span asp-validation-for="numeroTelefono" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-succes">Registrarse</button>
+        </div>
+    </div>
+
+</form>
+
