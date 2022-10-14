@@ -1,10 +1,17 @@
-﻿@model IEnumerable<>
+﻿@model IEnumerable<Tiquetera.Models.UsuariosViewModel>
 
-<html>
-    <head>
-        <title>Mis Clientes</title>
-    </head>
-    <body>
+    <div class="">
+        <div class="">
+            <table class="table">
+                @foreach (i in model)
+                {
+                    <tr>
+                        <td>
 
-    </body>
-</html>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
