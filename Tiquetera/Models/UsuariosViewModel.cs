@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.Internal;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.Net.NetworkInformation;
 
@@ -6,7 +7,6 @@ namespace Tiquetera.Models
 {
     public class UsuariosViewModel
     {
-        public int idUsuarios { get; set; }
         public int idTipoDocumento { get; set; }
         public int idTipoUsuario { get; set; }
         public int idContacto { get; set; }
