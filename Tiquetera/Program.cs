@@ -4,13 +4,13 @@ using Tiquetera.Datos;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuramos la conexion a SQLServer
-builder.Services.AddDbContext<AplicationBaseDatos>(opciones => 
-    opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSQLServer"))
+//Configuramos la conexión a sql server
+builder.Services.AddDbContext<AplicationBaseDatos>(opciones =>
+    opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql"))
 );
 
 // Agregar el servicio Identity a la aplicacion
-//builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AplicationBaseDatos>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
