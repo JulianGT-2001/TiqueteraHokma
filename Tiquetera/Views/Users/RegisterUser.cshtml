@@ -74,7 +74,7 @@
                                 <div class="form-floating mb-3">
                                     <label for="exampleDataList" class="form-label"></label>
 
-                                    <select id="tipoId" name="tipoId" class="select2 form-control col-12 bg-white">
+                                    <select id="tipoId" asp-for="tipoUsuario" class="select2 form-control col-12 bg-white">
                                         <option value="0" selected>Tipo persona</option>
                                         <option value="1">Persona Natural</option>
                                         <option value="2">Tienda</option>
@@ -83,14 +83,14 @@
 
                                 <div class="wrapper">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="Juan Sebastia Muñoz" required>
+                                        <input asp-for="primerNombre" type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="Juan Sebastia Muñoz" required>
                                         <label for="tb-rfname">Primer nombre</label>
                                         <div class="invalid-feedback">
                                             Full name is required
                                         </div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="Juan Sebastia Muñoz" required>
+                                        <input asp-for="segundoNombre" type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="Juan Sebastia Muñoz" required>
                                         <label for="tb-rfname">Segundo nombre</label>
                                         <div class="invalid-feedback">
                                             Full name is required
@@ -99,14 +99,14 @@
                                 </div>
                                 <div class="wrapper">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="Juan Sebastia Muñoz" required>
+                                        <input asp-for="primerApellido" type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="Juan Sebastia Muñoz" required>
                                         <label for="tb-rfname">Primer apellido</label>
                                         <div class="invalid-feedback">
                                             Full name is required
                                         </div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="Juan Sebastia Muñoz" required>
+                                        <input asp-for="segundoApellido" type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="Juan Sebastia Muñoz" required>
                                         <label for="tb-rfname">Segundo apellido</label>
                                         <div class="invalid-feedback">
                                             Full name is required
@@ -115,14 +115,14 @@
                                 </div>
                                 <div class="wrapper">
                                     <div class="form-floating mb-3">
-                                        <input type="number" class="form-control form-input-bg" id="tb-rfname" placeholder="1235685" required>
+                                        <input asp-for="numeroDocumento" type="number" class="form-control form-input-bg" id="tb-rfname" placeholder="1235685" required>
                                         <label for="tb-rfname">No. Documento</label>
                                         <div class="invalid-feedback">
                                             Full name is required
                                         </div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="number" class="form-control form-input-bg" id="number-celular" placeholder="Número celular" required>
+                                        <input asp-for="numeroTelefono" type="number" class="form-control form-input-bg" id="number-celular" placeholder="Número celular" required>
                                         <label for="number-celularl">Número celular</label>
                                         <div class="invalid-feedback">
                                             Number is required
@@ -131,7 +131,7 @@
                                 </div>
                                 
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control form-input-bg" id="tb-remail" placeholder="john@gmail.com" required>
+                                    <input asp-for="correo" type="email" class="form-control form-input-bg" id="tb-remail" placeholder="john@gmail.com" required>
                                     <label for="tb-remail">Email</label>
                                     <div class="invalid-feedback">
                                         Email is required
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="wrapper">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form-input-bg" id="tb-direccion" placeholder="Dirección" required>
+                                        <input asp-for="direccion" type="text" class="form-control form-input-bg" id="tb-direccion" placeholder="Dirección" required>
                                         <label for="tb-direccion">Dirección</label>
                                         <div class="invalid-feedback">
                                             Age is required
@@ -147,7 +147,7 @@
                                     </div>
 
                                     <div id="divFecha" class="form-floating mb-3">
-                                        <input type="date" class="form-control form-input-bg" id="tb-date" placeholder="Fecha de nacimiento" required>
+                                        <input asp-for="fechaNachimiento" type="date" class="form-control form-input-bg" id="tb-date" placeholder="Fecha de nacimiento" required>
                                         <label for="tb-date">Fecha de nacimiento</label>
                                         <div class="invalid-feedback">
                                             Date is required
@@ -157,21 +157,21 @@
                                 </div>
                                 
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required>
+                                    <input asp-for="contrasena" type="password" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required>
                                     <label for="text-rpassword">Contraseña</label>
                                     <div class="invalid-feedback">
                                         Password is required
                                     </div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control form-input-bg" id="text-rcpassword" placeholder="*****" required>
+                                    <input asp-for="confirmarContrasena" type="password" class="form-control form-input-bg" id="text-rcpassword" placeholder="*****" required>
                                     <label for="text-rcpassword">Confirma tu contraseña</label>
                                     <div class="invalid-feedback">
                                         Password is required
                                     </div>
                                 </div>
                                 <div class="checkbox checkbox-primary mb-3">
-                                    <input id="checkbox-signup" type="checkbox" class="chk-col-indigo material-inputs">
+                                    <input asp-for="acepta" id="checkbox-signup" type="checkbox" class="chk-col-indigo material-inputs">
                                     <label for="checkbox-signup"> Acepto terminos y condiciones</label>
                                 </div>
                                 <div class="d-flex align-items-stretch">

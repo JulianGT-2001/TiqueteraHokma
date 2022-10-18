@@ -37,6 +37,7 @@ namespace Tiquetera.Models
         public string numeroTelefono { get; set; }
 
         public string direccion { get; set; }
+        public DateTime fechaNachimiento { get; set; }
 
         public bool acepta { get; set; }
     }

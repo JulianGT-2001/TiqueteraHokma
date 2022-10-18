@@ -17,7 +17,8 @@ namespace Tiquetera.Models
         [DataType(DataType.Password)]
         public string contrasena { get; set; }
         [Display(Name = "Recordar datos")]
-        public bool RememberMe{ get; set; }
+        
+        public bool recuerdame{ get; set; }
 
 
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Tiquetera.Models;
 
 namespace Tiquetera.Controllers
@@ -26,11 +27,12 @@ namespace Tiquetera.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(AccesoViewModel modelo)
         {
-           
+            if (ModelState.IsValid)
+            {
                 var resultado = await _signInManager.PasswordSignInAsync(
                 modelo.Correo,
                 modelo.contrasena,
-                modelo.RememberMe,
+                modelo.recuerdame,
                 lockoutOnFailure: false
                 );
                 if (resultado.Succeeded)
@@ -42,6 +44,9 @@ namespace Tiquetera.Controllers
                     ModelState.AddModelError(string.Empty, "Acceso Invalido");
                     return View(modelo);
                 }
+            }
+            return RedirectToAction("Index", "Home");
+                
         }
 
         [HttpGet]
@@ -63,16 +68,17 @@ namespace Tiquetera.Controllers
                     primerApellido = register.primerApellido,
                     segundoApellido = register.segundoApellido,
                     tipoId =register.tipoUsuario,
-                    numeroDocumento = register.numeroDocumento,
+                    numeroDocumento = register.numeroDocumento, 
                     PhoneNumber= register.numeroTelefono,
                     direccion = register.direccion,
-                    vigente = register.acepta
+                    vigente = register.acepta,
+                    fechaNacimiento = register.fechaNachimiento
                 };
                 var resultado = await _userManager.CreateAsync(usuario, register.contrasena);
                 if (resultado.Succeeded)
                 {
                     await _signInManager.SignInAsync(usuario, isPersistent: false);
-                    return RedirectToAction("Login", "Home");
+                    return RedirectToAction("Login", "Users");
                 }
                 ValidarErrores(resultado);
             
