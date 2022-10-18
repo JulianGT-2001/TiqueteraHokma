@@ -12,6 +12,7 @@ namespace Tiquetera.Datos
         }
 
         public DbSet<AppUsuario> listuser { get; set; }
+        //public DbSet<TiquetesViewModel> listtickets { get; set; }
 
     }    
 }
