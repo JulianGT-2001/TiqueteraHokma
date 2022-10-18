@@ -9,9 +9,9 @@ namespace Tiquetera.Datos
         public AplicationBaseDatos(DbContextOptions options): base(options)
         {
         }
-
-        public DbSet<AppUsuario> listuser { get; set; }
+        //public DbSet<AppUsuario> listuser { get; set; }
         //public DbSet<TiquetesViewModel> listtickets { get; set; }
+        public DbSet<UsuariosViewModel> usuariosViewModels { get; set; }
 
     }    
 }

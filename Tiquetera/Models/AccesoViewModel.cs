@@ -13,12 +13,12 @@ namespace Tiquetera.Models
         public string Correo { get; set; }
 
         [Required(ErrorMessage ="Contraseña requerida")]
-        [StringLength(50,ErrorMessage ="el {0} debe estar entre {2} caracteres de longitud", MinimumLength = 5)]
         [Display(Name = "Contraseña")]
         [DataType(DataType.Password)]
-        public string contraseña { get; set; }
+        public string contrasena { get; set; }
         [Display(Name = "Recordar datos")]
-        public bool RememberMe{ get; set; }
+        
+        public bool recuerdame{ get; set; }
 
 
     }
