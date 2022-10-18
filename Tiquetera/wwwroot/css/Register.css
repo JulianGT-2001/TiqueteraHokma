@@ -1,0 +1,20 @@
+﻿body {
+   
+}
+
+.p-4 {
+    padding: 1.5rem !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.row {
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x)/ -2);
+    margin-left: calc(var(--bs-gutter-x)/ -2);
+}
