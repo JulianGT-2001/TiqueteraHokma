@@ -25,9 +25,35 @@ namespace Tiquetera.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CrearClientes(AppUsuario usuario)
+        public async Task<IActionResult> CrearClientes(CrearClienteViewModel usuario)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var user = new AppUsuario 
+                { 
+                  UserName = usuario.Email,
+                  primerNombre = usuario.primerNombre, 
+                  segundoNombre = usuario.segundoNombre, 
+                  primerApellido = usuario.primerApellido, 
+                  segundoApellido = usuario.segundoApellido,
+                  numeroDocumento = usuario.numeroDocumento, 
+                  direccion = usuario.direccion, 
+                  fechaNacimiento = usuario.fechaNacimiento, 
+                  numeroCelular = usuario.numeroCelular 
+                };
+                var resultado = await _userManager.CreateAsync(user, "Seguridad2022..");
+
+                ValidarErrores(resultado);
+            }
+            return View(usuario);
+        }
+
+        private void ValidarErrores(IdentityResult resultado)
+        {
+            foreach (var error in resultado.Errors)
+            {
+                ModelState.AddModelError(String.Empty, error.Description);
+            }
         }
 
         //Listar Clientes

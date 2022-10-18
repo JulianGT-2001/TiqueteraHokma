@@ -6,6 +6,7 @@ namespace Tiquetera.Models
 {
     public class AppUsuario : IdentityUser
     {
+        public string Email { get; set; }
         public int? idTipoDocumento { get; set; }
         public int? idTipoUsuario { get; set; }
         [Display (Name = "Primer Nombre")]

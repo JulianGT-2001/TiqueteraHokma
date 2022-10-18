@@ -8,7 +8,6 @@ namespace Tiquetera.Datos
     {
         public AplicationBaseDatos(DbContextOptions options): base(options)
         {
-
         }
 
         public DbSet<AppUsuario> listuser { get; set; }
