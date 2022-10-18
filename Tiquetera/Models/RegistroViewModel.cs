@@ -17,17 +17,18 @@ namespace Tiquetera.Models
         [DataType(DataType.Password)]
         public string contrasena { get; set; }
 
-        [Required(ErrorMessage = "Contraseña requerida")]
+        [Required(ErrorMessage = "Confirmacion de contraseña requerida")]
         [Compare("contrasena", ErrorMessage ="la contraseña no coincide") ]
         [Display(Name = "Confirmar  Contraseña")]
         [DataType(DataType.Password)]
         public string confirmarContrasena { get; set; }
 
-        [Required]
+        [Required (ErrorMessage = "Los nombres y apellidos son requeridos")]
         public string primerNombre { get; set; }
         public string segundoNombre { get; set; }
         public string primerApellido { get; set; }
         public string segundoApellido { get; set; }
+
 
         public string tipoUsuario { get; set; }
 

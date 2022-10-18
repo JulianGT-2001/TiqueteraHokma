@@ -1,1 +1,51 @@
-﻿
+﻿@model IEnumerable<Tiquetera.Models.AppUsuario> 
+
+<div class="">
+    <div class="">
+        <a class="btn btn-success" asp-controller="Clientes" asp-action="CrearClientes"><i data-feather="plus" class="fill-white feather-sm"></i> Create</a>
+        @if(Model.Count() > 0)
+        {
+            <table class="table">
+            <thead>
+                <tr>
+                    <th><label>Id Usuario</label></th>
+                    <th><label>Primer Nombre</label></th>
+                    <th><label>Segundo Nombre</label></th>
+                    <th><label>Estado</label></th>
+                    @*<th><label>Numero de tiquete</label></th>
+                    <th><label>Tiquetes redimidos</label></th>
+                    <th><label>Tiquetes gastados</label></th>
+                    <th><label>Tiquetes restantes</label></th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+
+                    @foreach (var i in Model)
+                    {
+                        <tr>
+                            <td>@i.Id</td>
+                            <td>@i.primerNombre</td>
+                            <td>@i.segundoNombre</td>
+                            <td>@i.vigente</td>
+                            <td>
+                                <div class="text-center">
+                                    <form asp-action="EliminarClientes" asp-route-idUsuario="@i.Id">
+                                        <a class="btn btn-primary" asp-controller="Clientes" asp-action="EditarClientes" asp-route-id="@i.Id">Editar</a>
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Está seguro de querer eliminar esté registro?')">Eliminar</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                } else
+                {
+                    <p>No hay registros</p>
+                }
+            </tbody>
+                
+            </table>
+        }
+    </div>
+</div>

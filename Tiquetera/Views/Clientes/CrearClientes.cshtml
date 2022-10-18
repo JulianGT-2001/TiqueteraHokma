@@ -1,0 +1,65 @@
+﻿@model AppUsuario
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1 class="text-info">Crear Cliente</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <form method="post" asp-controller="Clientes" asp-action="CrearClientes">
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="primerNombre"></label>
+                <input asp-for="primerNombre" class="form-control" />
+                <span asp-validation-for="primerNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="segundoNombre"></label>
+                <input asp-for="segundoNombre" class="form-control" />
+                <span asp-validation-for="segundoNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="primerApellido"></label>
+                <input asp-for="primerApellido" class="form-control" />
+                <span asp-validation-for="primerApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="segundoApellido"></label>
+                <input asp-for="segundoApellido" class="form-control" />
+                <span asp-validation-for="segundoApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numeroDocumento"></label>
+                <input asp-for="numeroDocumento" class="form-control" />
+                <span asp-validation-for="numeroDocumento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="direccion"></label>
+                <input asp-for="direccion" class="form-control" />
+                <span asp-validation-for="direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaNacimiento"></label>
+                <input asp-for="fechaNacimiento" class="form-control" />
+                <span asp-validation-for="fechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numeroCelular"></label>
+                <input asp-for="numeroCelular" class="form-control" />
+                <span asp-validation-for="numeroCelular" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">Crear Cliente</button>
+                <a asp-action="ListarClientes" class="text-dark" style="width:auto">Volver atrás</a>
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -12,8 +12,8 @@ using Tiquetera.Datos;
 namespace Tiquetera.Migrations
 {
     [DbContext(typeof(AplicationBaseDatos))]
-    [Migration("20221014185255_AgregarNuevosCampos")]
-    partial class AgregarNuevosCampos
+    [Migration("20221016141106_AgregarCamposNuevosUsers")]
+    partial class AgregarCamposNuevosUsers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -228,9 +228,25 @@ namespace Tiquetera.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Tiquetera.Models.UsuariosViewModel", b =>
+            modelBuilder.Entity("Tiquetera.Models.AppUsuario", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("confirmarContraseña")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("contrasena")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("correo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("direccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("fechaCreacion")
                         .HasColumnType("datetime2");
@@ -250,9 +266,6 @@ namespace Tiquetera.Migrations
                     b.Property<int>("idTipoUsuario")
                         .HasColumnType("int");
 
-                    b.Property<int>("idUsuarios")
-                        .HasColumnType("int");
-
                     b.Property<string>("maquinaCreacion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -261,11 +274,12 @@ namespace Tiquetera.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("numeroDocumento")
+                    b.Property<string>("numeroCelular")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("numeroTelefono")
+                    b.Property<string>("numeroDocumento")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -285,6 +299,10 @@ namespace Tiquetera.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("tipoId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("usuarioCrea")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -296,7 +314,7 @@ namespace Tiquetera.Migrations
                     b.Property<bool>("vigente")
                         .HasColumnType("bit");
 
-                    b.HasDiscriminator().HasValue("UsuariosViewModel");
+                    b.HasDiscriminator().HasValue("AppUsuario");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -7,7 +7,6 @@ namespace Tiquetera.Models
 {
     public class UsuariosViewModel : IdentityUser
     {
-        public int idUsuarios { get; set; }
         public int idTipoDocumento { get; set; }
         public int idTipoUsuario { get; set; }
         public int idContacto { get; set; }
