@@ -11,10 +11,12 @@ namespace Tiquetera.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AplicationBaseDatos _user;
-        public ClientesController(UserManager<IdentityUser> userManager, AplicationBaseDatos user)
+        private readonly SignInManager<IdentityUser> _signInManager;
+        public ClientesController(UserManager<IdentityUser> userManager, AplicationBaseDatos user, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
             _user = user;
+            _signInManager = signInManager;
         }
 
         //Crear Clientes
@@ -43,7 +45,15 @@ namespace Tiquetera.Controllers
                 };
                 var resultado = await _userManager.CreateAsync(user, "Seguridad2022..");
 
-                ValidarErrores(resultado);
+                if (resultado.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("ListarClientes", "Clientes");
+                }
+                else
+                {
+                    ValidarErrores(resultado);
+                }                
             }
             return View(usuario);
         }
@@ -94,7 +104,8 @@ namespace Tiquetera.Controllers
                 usuariosBD.numeroDocumento = usuario.numeroDocumento;
                 usuariosBD.direccion = usuario.direccion;
                 usuariosBD.fechaNacimiento = usuario.fechaNacimiento;
-                usuariosBD.numeroCelular = usuario.numeroCelular;
+                usuariosBD.PhoneNumber = usuario.PhoneNumber;
+                //usuariosBD = usuario;
                 _user.SaveChanges();
                 return RedirectToAction(nameof(ListarClientes));
             }
