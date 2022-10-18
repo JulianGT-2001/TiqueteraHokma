@@ -10,7 +10,7 @@ builder.Services.AddDbContext<AplicationBaseDatos>(opciones =>
 );
 
 // Agregar el servicio Identity a la aplicacion
-//builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AplicationBaseDatos>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Tiquetera.Models;
 
 namespace Tiquetera.Datos
 {
@@ -9,5 +10,7 @@ namespace Tiquetera.Datos
         {
 
         }
+
+        public DbSet<UsuariosViewModel> usuariosViewModels { get; set; }
     }    
 }

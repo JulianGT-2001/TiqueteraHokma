@@ -1,4 +1,4 @@
-﻿@model Tiquetera.Models.UsuariosViewModel
+﻿@model Tiquetera.Models.RegistroViewModel
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -107,7 +107,7 @@
                                     </div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input name="numeroCelular"  type="text" class="form-control form-input-bg" id="number-celular" placeholder="Número celular" required>
+                                    <input asp-for="numeroTelefono"  type="text" class="form-control form-input-bg" id="number-celular" placeholder="Número celular" required>
                                     <label for="number-celularl">Número celular</label>
                                     <div class="invalid-feedback">
                                         Number is required
@@ -129,14 +129,14 @@
                                     </div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input asp-for="confirmarContraseña" type="password" class="form-control form-input-bg" id="text-rcpassword" placeholder="*****" required>
+                                    <input asp-for="confirmarContrasena" type="password" class="form-control form-input-bg" id="text-rcpassword" placeholder="*****" required>
                                     <label for="text-rcpassword">Confirma tu contraseña</label>
                                     <div class="invalid-feedback">
                                         Password is required
                                     </div>
                                 </div>
                                 <div class="checkbox checkbox-primary mb-3">
-                                    <input id="checkbox-signup" type="checkbox" class="chk-col-indigo material-inputs">
+                                    <input asp-for="acepta" id="checkbox-signup" type="checkbox" class="chk-col-indigo material-inputs">
                                     <label for="checkbox-signup"> Acepto terminos y condiciones</label>
                                 </div>
                                 <div class="d-flex align-items-stretch">
