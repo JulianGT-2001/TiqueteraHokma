@@ -37,7 +37,7 @@ namespace Tiquetera.Controllers
                 );
                 if (resultado.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("ListarClientes", "Clientes");
                 }
                 else
                 {
