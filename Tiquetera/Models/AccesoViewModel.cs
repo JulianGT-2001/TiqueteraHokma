@@ -10,7 +10,7 @@ namespace Tiquetera.Models
     {
         [Required(ErrorMessage = "Correo requerido")]
         [EmailAddress]
-        public string Correo { get; set; }
+        public string correo { get; set; }
 
         [Required(ErrorMessage ="Contraseña requerida")]
         [Display(Name = "Contraseña")]

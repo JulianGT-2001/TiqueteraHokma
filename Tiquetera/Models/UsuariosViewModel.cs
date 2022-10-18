@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Storage.Internal;
-using System.ComponentModel.DataAnnotations;
-using System.Net.NetworkInformation;
 
 namespace Tiquetera.Models
 {
@@ -17,7 +14,7 @@ namespace Tiquetera.Models
         public string numeroDocumento { get; set; }
         public string tipoId { get; set; }
         public string correo { get; set; }
-        public  string direccion { get; set; }
+        public string direccion { get; set; }
         public DateTime fechaNacimiento { get; set; }
         public bool vigente { get; set; }
         public DateTime fechaCreacion { get; set; }
@@ -29,7 +26,6 @@ namespace Tiquetera.Models
         public string contrasena { get; set; }
         public string confirmarContraseña { get; set; }
         public string numeroCelular { get; set; }
-
 
     }
 }

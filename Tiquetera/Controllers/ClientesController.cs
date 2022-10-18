@@ -29,7 +29,7 @@ namespace Tiquetera.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new AppUsuario 
+                var user = new UsuariosViewModel 
                 { 
                   UserName = usuario.Email,
                   primerNombre = usuario.primerNombre, 
@@ -60,18 +60,7 @@ namespace Tiquetera.Controllers
         [HttpGet]
         public async Task<IActionResult> ListarClientes()
         {
-            var usuarios = await _user.listuser.ToListAsync();
-            //var tiquetes = await _user.listtickets.ToListAsync();
-
-            //foreach (var usuario in usuarios)
-            //{
-            //    var ticket = tiquetes.FirstOrDefault(u => u.idTiquetes == usuario.Id);
-            //    if (ticket == null)
-            //    {
-            //        usuario.idt
-            //    }
-            //}
-
+            var usuarios = await _user.usuariosViewModels.ToListAsync();
             return View(usuarios);
         }
 
@@ -79,7 +68,7 @@ namespace Tiquetera.Controllers
         [HttpGet]
         public IActionResult EditarClientes(string id)
         {
-            var usuariosBD = _user.listuser.FirstOrDefault(u => u.Id == id);
+            var usuariosBD = _user.usuariosViewModels.FirstOrDefault(u => u.Id == id);
             if (usuariosBD == null)
             {
                 return NotFound();
@@ -88,11 +77,11 @@ namespace Tiquetera.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditarClientes(AppUsuario usuario)
+        public async Task<IActionResult> EditarClientes(UsuariosViewModel usuario)
         {
             if (ModelState.IsValid)
             {
-                var usuariosBD = _user.listuser.FirstOrDefault(u => u.Id == usuario.Id);
+                var usuariosBD = _user.usuariosViewModels.FirstOrDefault(u => u.Id == usuario.Id);
                 if (usuariosBD == null)
                 {
                     return NotFound();
@@ -117,14 +106,14 @@ namespace Tiquetera.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult EliminarClientes(string idUsuario)
         {
-            var usuarioBD = _user.listuser.FirstOrDefault(u => u.Id == idUsuario);
+            var usuarioBD = _user.usuariosViewModels.FirstOrDefault(u => u.Id == idUsuario);
             
             if (usuarioBD == null)
             {
                 return NotFound();
             }
 
-            _user.listuser.Remove(usuarioBD);
+            _user.usuariosViewModels.Remove(usuarioBD);
             _user.SaveChanges();
             return RedirectToAction(nameof(ListarClientes));
         }

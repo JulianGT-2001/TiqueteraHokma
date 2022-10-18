@@ -18,10 +18,10 @@ namespace Tiquetera.Models
         public string numeroDocumento { get; set; }
 
         [Display(Name = "Direccion")]
-        public string? direccion { get; set; }
+        public string direccion { get; set; }
 
         [Display(Name = "Fecha de Nacimento")]
-        public DateTime? fechaNacimiento { get; set; }
+        public DateTime fechaNacimiento { get; set; }
 
         [Required]
         [Display(Name = "Numero de telefono")]

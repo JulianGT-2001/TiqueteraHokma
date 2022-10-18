@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Configuramos la conexión a sql server
 builder.Services.AddDbContext<AplicationBaseDatos>(opciones =>
-    opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql"))
+    opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSQLServer"))
 );
 
 // Agregar el servicio Identity a la aplicacion

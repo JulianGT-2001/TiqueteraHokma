@@ -30,7 +30,7 @@ namespace Tiquetera.Controllers
             if (ModelState.IsValid)
             {
                 var resultado = await _signInManager.PasswordSignInAsync(
-                modelo.Correo,
+                modelo.correo,
                 modelo.contrasena,
                 modelo.recuerdame,
                 lockoutOnFailure: false
