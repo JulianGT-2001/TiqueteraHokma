@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace Tiquetera.Models
 {
@@ -18,7 +20,7 @@ namespace Tiquetera.Models
         public DateTime? fechaNacimiento { get; set; }
         public bool? vigente { get; set; }
         public DateTime? fechaCreacion { get; set; }
-        public DateTime fechaMaquinaModifica { get; set; }
+        public DateTime? fechaMaquinaModifica { get; set; }
         public string? maquinaModifica { get; set; }
         public string? maquinaCreacion { get; set; }
         public string? usuarioCrea { get; set; }
@@ -26,6 +28,5 @@ namespace Tiquetera.Models
         public string? contrasena { get; set; }
         public string? confirmarContraseña { get; set; }
         public string? numeroCelular { get; set; }
-
     }
 }

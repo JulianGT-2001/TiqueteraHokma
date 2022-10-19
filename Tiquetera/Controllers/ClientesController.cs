@@ -41,7 +41,7 @@ namespace Tiquetera.Controllers
                   numeroDocumento = usuario.numeroDocumento, 
                   direccion = usuario.direccion, 
                   fechaNacimiento = usuario.fechaNacimiento, 
-                  numeroCelular = usuario.numeroCelular 
+                  PhoneNumber = usuario.PhoneNumber 
                 };
                 var resultado = await _userManager.CreateAsync(user, "Seguridad2022..");
 
@@ -105,7 +105,6 @@ namespace Tiquetera.Controllers
                 usuariosBD.direccion = usuario.direccion;
                 usuariosBD.fechaNacimiento = usuario.fechaNacimiento;
                 usuariosBD.PhoneNumber = usuario.PhoneNumber;
-                //usuariosBD = usuario;
                 _user.SaveChanges();
                 return RedirectToAction(nameof(ListarClientes));
             }

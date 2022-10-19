@@ -147,7 +147,8 @@
                                     </div>
 
                                     <div id="divFecha" class="form-floating mb-3">
-                                        <input asp-for="fechaNachimiento" type="date" class="form-control form-input-bg" id="tb-date" placeholder="Fecha de nacimiento" required>
+                                        <input name="fechaNachimiento" type="date" class="form-control form-input-bg" id="datepicker" placeholder="Fecha de nacimiento" required>
+                                        <input asp-for="fechaNachimiento" type="text" class="form-control form-input-bgñ" id="datepicker" placeholder="Ejemplo: 1990-10-05 " required />
                                         <label for="tb-date">Fecha de nacimiento</label>
                                         <div class="invalid-feedback">
                                             Date is required

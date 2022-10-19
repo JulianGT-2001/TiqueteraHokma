@@ -70,7 +70,8 @@
                                 <p class="text-muted fs-4">¿No tienes cuenta? <a href="~/Users/RegisterUser" id="to-register">Registrate aquí</a></p>
                                 @using (Html.BeginForm("Login", "Users", FormMethod.Post))
                                 {
-                                <form class="form-horizontal mt-4 pt-4 needs-validation" novalidate action="index.html">
+                                <form method="post" asp-controller="Users" asp-action="Login" class="form-horizontal mt-4 pt-4 needs-validation">
+                                    <div class="text-danger" asp-validation-summary="All"></div> 
                                     <div class="form-floating mb-3">  
                                         <input asp-for="correo" class="form-control form-input-bg" id="tb-email" placeholder="name@example.com">
                                         <label style="Dark link">Email</label>
@@ -118,7 +119,7 @@
                                 </div>
                                 <div class="mt-4 pt-4">
                                     <!-- Form -->
-                                    <form action="index.html">
+                                    <form action="ListarClientes.html">
                                         <!-- email -->
                                         <div class="mb-4 pb-2">
                                             <div class="form-floating">
