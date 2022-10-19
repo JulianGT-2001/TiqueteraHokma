@@ -45,7 +45,7 @@ namespace Tiquetera.Controllers
                     return View(modelo);
                 }
             }
-            return RedirectToAction("Index", "Home");
+            return View(modelo);
                 
         }
 
