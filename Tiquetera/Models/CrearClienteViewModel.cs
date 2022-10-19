@@ -6,8 +6,9 @@ namespace Tiquetera.Models
     public class CrearClienteViewModel
     {
         [Required(ErrorMessage = "Los nombres y apellidos son requeridos")]
-        
+        [Display(Name = "Primer Nombre")]
         public string primerNombre { get; set; }
+        [Display(Name = "Segundo Nombre")]
         public string segundoNombre { get; set; }
         public string primerApellido { get; set; }
         public string segundoApellido { get; set; }
@@ -25,6 +26,6 @@ namespace Tiquetera.Models
 
         [Required]
         [Display(Name = "Numero de telefono")]
-        public string numeroCelular { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

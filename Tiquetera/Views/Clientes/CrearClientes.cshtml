@@ -11,49 +11,49 @@
             <div asp-validation-summary="All" class="text-danger"></div>
 
             <div class="form-group">
-                <label asp-for="Email"></label>
+                <label asp-for="Email">Email</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="primerNombre"></label>
+                <label asp-for="primerNombre">Primer Nombre</label>
                 <input asp-for="primerNombre" class="form-control" />
                 <span asp-validation-for="primerNombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="segundoNombre"></label>
+                <label asp-for="segundoNombre">Segundo Nombre</label>
                 <input asp-for="segundoNombre" class="form-control" />
                 <span asp-validation-for="segundoNombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="primerApellido"></label>
+                <label asp-for="primerApellido">Primer Apellido</label>
                 <input asp-for="primerApellido" class="form-control" />
                 <span asp-validation-for="primerApellido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="segundoApellido"></label>
+                <label asp-for="segundoApellido">Segundo Apellido</label>
                 <input asp-for="segundoApellido" class="form-control" />
                 <span asp-validation-for="segundoApellido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="numeroDocumento"></label>
+                <label asp-for="numeroDocumento">Numero Documento</label>
                 <input asp-for="numeroDocumento" class="form-control" />
                 <span asp-validation-for="numeroDocumento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="direccion"></label>
+                <label asp-for="direccion">Direccion</label>
                 <input asp-for="direccion" class="form-control" />
                 <span asp-validation-for="direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="fechaNacimiento"></label>
-                <input asp-for="fechaNacimiento" class="form-control" />
+                <label asp-for="fechaNacimiento">Fecha Nacimiento</label>
+                <input name="fechaNacimiento" type="text" class="form-control" id="datepicker" placeholder="Ejemplo: 1990-10-05"/>
                 <span asp-validation-for="fechaNacimiento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="numeroCelular"></label>
-                <input asp-for="numeroCelular" class="form-control" />
-                <span asp-validation-for="numeroCelular" class="text-danger"></span>
+                <label asp-for="PhoneNumber">Numero Celular</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group mt-4">
                 <button type="submit" class="btn btn-primary">Crear Cliente</button>
